@@ -7,7 +7,7 @@ using System.Web;
 
 namespace AirRouteFinder.Controllers
 {
-    public static class Logic
+    public class Logic
     {
         private class Node
         {
@@ -17,12 +17,12 @@ namespace AirRouteFinder.Controllers
             public List<Node> Neighbours { get; set; }
         }
 
-        private static List<Node> AllNodes;
-        static Queue<Node> queue = new Queue<Node>();
+        private List<Node> AllNodes;
+        Queue<Node> queue = new Queue<Node>();
 
         //I first wrote a recursive method here, which calculated the children of each node before moving to the next node.
         //Then I realised that method does not return the shortest path and we need a BFS traverse. i.e. we need to complete each level before moving to children.
-        public static string GetShortestPath(string source, string dest)
+        public string GetShortestPath(string source, string dest)
         {
             var originNode = new Node()
             {
@@ -75,7 +75,7 @@ namespace AirRouteFinder.Controllers
             return "No Route";
         }
 
-        private static List<Node> GetNeighbourNodes(string name)
+        private List<Node> GetNeighbourNodes(string name)
         {
             DbDataReader reader = null;
             try

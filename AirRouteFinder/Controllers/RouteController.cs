@@ -24,7 +24,8 @@ namespace AirRouteFinder.Controllers
             if (destinationRow == null)
                 return "Invalid Destination";
 
-            string path = Logic.GetShortestPath(origin, destination);
+            var logic = new Logic();
+            string path = logic.GetShortestPath(origin, destination);
 
             if (string.IsNullOrEmpty(path))
                 return "No Route";
