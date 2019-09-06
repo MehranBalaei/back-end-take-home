@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirRouteFinder", "AirRouteFinder\AirRouteFinder.csproj", "{5963AB0F-1E7F-4B25-AC65-D4DA6ADF1BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirRouteFinder.Tests", "AirRouteFinder.Tests\AirRouteFinder.Tests.csproj", "{CB93ABFA-4A85-4865-81F5-AEC0237BA2E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5963AB0F-1E7F-4B25-AC65-D4DA6ADF1BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5963AB0F-1E7F-4B25-AC65-D4DA6ADF1BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5963AB0F-1E7F-4B25-AC65-D4DA6ADF1BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5963AB0F-1E7F-4B25-AC65-D4DA6ADF1BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB93ABFA-4A85-4865-81F5-AEC0237BA2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB93ABFA-4A85-4865-81F5-AEC0237BA2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB93ABFA-4A85-4865-81F5-AEC0237BA2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB93ABFA-4A85-4865-81F5-AEC0237BA2E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D177040E-B082-41E6-B5B9-F4920238685C}
+	EndGlobalSection
+EndGlobal
