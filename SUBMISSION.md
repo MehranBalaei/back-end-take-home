@@ -33,12 +33,16 @@ On my computer, the data files are located in this folder:
 In order to be able to build and run the solution, you will need to set the connection strings in the above .config files 
 to point to the full and test folders on your computer respectively.
 
+
 ###Logic
+
 I first wrote a recursive method, which calculated the children of each node (airport) before moving to the next node.
 Then I realised that method does not return the shortest path and we need a BFS traverse. i.e. we need to complete each level before moving to children.
 I am using a queue to implement the BFS traversal.
 
+
 ###Thank you!
+
 Thanks for giving me this opportunity and thanks for reviewing my application.
 Hope to see you soon.
 
