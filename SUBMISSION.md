@@ -30,7 +30,8 @@ The connction string for the unit test project is set in this file:
 On my computer, the data files are located in this folder:
 	C:\Coding\Guestlogix\AirRouteFinderSolution\AirRouteFinder\App_Data
 
-In order to be able to build and run the solution, you will need to set the connection strings in the above .config files to point to the "full" and "test" folders on your computer respectively.
+In order to be able to build and run the solution, you will need to set the connection strings in the above .config files 
+to point to the full and test folders on your computer respectively.
 
 ###Logic
 I first wrote a recursive method, which calculated the children of each node (airport) before moving to the next node.
