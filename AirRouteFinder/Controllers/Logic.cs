@@ -13,10 +13,12 @@ namespace AirRouteFinder.Controllers
         {
             public string Path { get; set; }
             public string Name { get; set; }
+            public bool Processed { get; set; }
             public List<Node> Neighbours { get; set; }
         }
 
         private static List<Node> AllNodes;
+        static Queue<Node> queue = new Queue<Node>();
 
         //I first wrote a recursive method here, which calculated the children of each node before moving to the next node.
         //Then I realised that method does not return the shortest path and we need a BFS traverse. i.e. we need to complete each level before moving to children.
@@ -25,11 +27,11 @@ namespace AirRouteFinder.Controllers
             var originNode = new Node()
             {
                 Path = source,
-                Name = source
+                Name = source,
+                Processed = false
             };
 
             AllNodes = new List<Node>();
-            Queue<Node> queue = new Queue<Node>();
             queue.Enqueue(originNode);
             AllNodes.Add(originNode);
 
@@ -43,9 +45,12 @@ namespace AirRouteFinder.Controllers
                 {
                     foreach (var neighbourNode in node.Neighbours)
                     {
+                        if (neighbourNode.Processed)
+                            continue;
+
                         //If we have already passed this node, we don't want to go through it again.
                         // If there is a route from this node to the node above it, this will cause an endless loop
-                        if (node.Path.Contains(neighbourNode.Name))
+                        if (node.Path != null && node.Path.Contains(neighbourNode.Name))
                             continue;
 
                         
@@ -57,9 +62,14 @@ namespace AirRouteFinder.Controllers
                         if (neighbourNode.Name == dest)
                             return (neighbourNode.Path);
 
-                        queue.Enqueue(neighbourNode);
+                        if (!neighbourNode.Processed)
+                            queue.Enqueue(neighbourNode);
+
                     }
+
                 }
+                node.Processed = true;
+
             }
 
             return "No Route";
@@ -90,8 +100,8 @@ namespace AirRouteFinder.Controllers
                             Name = neighbourName,
                         };
                         AllNodes.Add(neighbourNode);
+                        result.Add(neighbourNode);
                     }
-                    result.Add(neighbourNode);
                 }
 
                 return result;
