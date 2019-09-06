@@ -100,6 +100,8 @@ namespace AirRouteFinder.Controllers
                             Name = neighbourName,
                         };
                         AllNodes.Add(neighbourNode);
+
+                        //We only need to process this neighbour if it hasn't already been processed.
                         result.Add(neighbourNode);
                     }
                 }

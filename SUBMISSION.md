@@ -34,14 +34,18 @@ In order to be able to build and run the solution, you will need to set the conn
 to point to the full and test folders on your computer respectively.
 
 
-###Logic
+### Logic
 
 I first wrote a recursive method, which calculated the children of each node (airport) before moving to the next node.
 Then I realised that method does not return the shortest path and we need a BFS traverse. i.e. we need to complete each level before moving to children.
 I am using a queue to implement the BFS traversal.
 
+### Update:
+I found some issues and checked in the changes to fix them.
+For example we got an out of memory issue when we tried to find the route between YYZ and KIH.
+The main issue was we added nodes to the queue multiple times. We don't need to go through nodes that have already been processed.
 
-###Thank you!
+### Thank you!
 
 Thanks for giving me this opportunity and thanks for reviewing my application.
 Hope to see you soon.
