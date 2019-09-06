@@ -48,8 +48,11 @@ namespace AirRouteFinder.Controllers
                         if (node.Path.Contains(neighbourNode.Name))
                             continue;
 
-                        //We track the passed airports in the Path property:
-                        neighbourNode.Path = node.Path + " -> " + neighbourNode.Name;
+                        
+                        //We track the passed airports in the Path property.
+                        //If the Path is already set, it means we have already found a shorter path.
+                        if (string.IsNullOrEmpty(neighbourNode.Path))
+                            neighbourNode.Path = node.Path + " -> " + neighbourNode.Name;
 
                         if (neighbourNode.Name == dest)
                             return (neighbourNode.Path);
